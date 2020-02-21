@@ -1,0 +1,131 @@
+<!-- <div  class="container">
+        <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" >
+            <div ngxSlickItem *ngFor="let slide of imageUrls" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%">
+            </div>
+        </ngx-slick-carousel>
+</div> -->
+<ngx-spinner></ngx-spinner>
+<div class="content_">
+    <div class="container content_area_set">
+        <div class="banner_area">
+            <div class="detail_l">
+                <img src="/upload/file/{{image_name_1}}.{{image_type_1}}?v=1.1" alt="">
+                <img src="/upload/file/{{image_name_2}}.{{image_type_2}}?v=1.1" alt="">
+            </div>
+            <div class="detail_r">
+                <img src="/upload/file/{{image_name_3}}.{{image_type_3}}?v=1.1" alt="">
+            </div>
+        </div>
+        <div class="content_area">
+            <div class="detail_l">
+                <div style="background:white;padding:10px; border-top-left-radius: 10px;border-top-right-radius: 10px;" class="titleContent" [innerHTML]="adjust_page_description | sanitizeHtml"></div>
+            </div>
+            <div class="detail_r">
+                <table class="table table-bordered table-striped table-curved2">
+                    <thead class="red_thead">
+                        <tr style="border-bottom: 0px !important;">
+                            <th scope="col" colspan="3" style="text-align: center; font-weight: 100;border-bottom: 0px;">กติกาการเล่นเกมทายผล</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" style="border-radius:0px;color: white; text-align: center; font-weight: 100; font-size: 14px; line-height: 0.6; ">เลือกได้ 1 ทีมต่อวัน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <div class="circle_result win"></div>
+                            </th>
+                            <td>ชนะ</td>
+                            <td>3 แต้ม</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <div class="circle_result win_2"></div>
+                            </th>
+                            <td>ชนะครึ่ง</td>
+                            <td>2 แต้ม</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <div class="circle_result draw"></div>
+                            </th>
+                            <td>เสมอ</td>
+                            <td>1 แต้ม</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <div class="circle_result lose"></div>
+                            </th>
+                            <td>แพ้</td>
+                            <td>0 แต้ม</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <div class="circle_result lose_2"></div>
+                            </th>
+                            <td>แพ้ครึ่ง</td>
+                            <td>0 แต้ม</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <div class="circle_result postpone"></div>
+                            </th>
+                            <td>เลื่อนแข่ง</td>
+                            <td>0 แต้ม</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row"><img src="/assets/images/icon_game/win3.gif" class="icon_game_" alt=""></th>
+                            <td>ชนะ</td>
+                            <td>3 นัดรวด</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <img src="/assets/images/icon_game/win5.gif" class="icon_game_" alt="">
+                            </th>
+                            <td>ชนะ</td>
+                            <td>5 นัดรวด</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <img src="/assets/images/icon_game/win7.gif" class="icon_game_" alt="">
+                            </th>
+                            <td>ชนะ</td>
+                            <td>7 นัดรวด</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <img src="/assets/images/icon_game/win10.gif" class="icon_game_" alt="">
+                            </th>
+                            <td>ชนะ</td>
+                            <td>10 นัดรวด</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <img src="/assets/images/icon_game/win15.gif" class="icon_game_" alt="">
+                            </th>
+                            <td>ชนะ</td>
+                            <td>15 นัดรวด</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <img src="/assets/images/icon_game/lose3.gif" class="icon_game_" alt="">
+                            </th>
+                            <td>แพ้</td>
+                            <td>3 นัดรวด</td>
+                        </tr>
+                        <tr class="hover_table_all text_center_table">
+                            <th scope="row">
+                                <img src="/assets/images/icon_game/lose5.gif" class="icon_game_" alt="">
+                            </th>
+                            <td>แพ้</td>
+                            <td>5 นัดรวด</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

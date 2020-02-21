@@ -1,0 +1,65 @@
+<!-- <iframe frameborder="0" height="550px" scrolling="no" src="https://winlot888.com/webbox/?token=1f0fe4af2993e20db6f9685ecdb3a13dffaeca17 " width="100%"></iframe> -->
+<div class="container content_area">
+  <div  id="formContent" style="margin-top:50px;margin-bottom: 50px;">
+      <div  class="fadeIn first " style="padding-top: 20px;"> สมัครเป็นสมาชิกกับ ZEANBALLDU.COM </div>
+      <form autocomplete="new-password" class="form-horizontal ng-pristine ng-valid ng-touched" #form='ngForm' style="padding: 20px;" (ngSubmit)="onSubmit(form)">
+          <input onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" [(ngModel)]="username" class="fadeIn second ng-pristine ng-valid ng-touched" id="login" name="username" placeholder="username" type="text" >
+          <input [(ngModel)]="password" class="fadeIn third ng-untouched ng-pristine ng-valid" id="password" name="password" placeholder="password" type="password" >
+          <input [(ngModel)]="password2" class="fadeIn third ng-untouched ng-pristine ng-valid" id="password2" name="password2" placeholder="password again" type="password" >
+          <hr>
+          <input [(ngModel)]="nickname" class="fadeIn third ng-untouched ng-pristine ng-valid" id="nickname" name="nickname" placeholder="ฉายา" type="text" >
+          <hr>
+          <input minlength="10" [(ngModel)]="tel"  class="fadeIn third ng-untouched ng-pristine ng-valid" id="tel" name="tel" placeholder="เบอร์โทร" type="text" >
+          <input  class="fadeIn fourth" type="submit" value="สมัครสมาชิก">
+      </form>
+      <div  id="formFooter"><a class="underlineHover" href="#">Forgot Password?</a></div>
+  </div>
+</div>
+
+
+
+
+
+<!-- 
+
+    <div class="titlePage">สมัครสมาชิก</div>
+    <form class="form-horizontal" #form='ngForm' (ngSubmit)="onSubmit(form)">
+        <fieldset>
+          <div class="control-group" >
+            <label class="control-label"  for="user_name">ชื่อ</label>
+            <div class="controls">
+              <input type="text" name="user_name" [(ngModel)]="user_name" placeholder="ชื่อ" class="input-xlarge form-control">
+            </div>
+          </div>
+       
+          <div class="control-group">
+            <label class="control-label" for="user_tel">เบอร์โทร</label>
+            <div class="controls">
+              <input type="text" name="user_tel" [(ngModel)]="user_tel"placeholder="เบอร์โทร" class="input-xlarge form-control">
+            </div>
+          </div>
+       
+          <div class="control-group">
+              <label class="control-label" for="user_line">E-mail</label>
+              <div class="controls">
+                <input type="text" name="email" [(ngModel)]="email" placeholder="E-mail" class="input-xlarge form-control">
+              </div>
+            </div>
+          <div class="control-group">
+            <label class="control-label" for="user_line">ไอดีไลน์</label>
+            <div class="controls">
+              <input type="text" name="user_line" [(ngModel)]="user_line" placeholder="ไอดีไลน์" class="input-xlarge form-control">
+            </div>
+          </div>
+    
+          <div class="control-group">
+            <div class="controls">
+              <button type="submit" class="btn btn-success">สมัครสมาชิก</button>
+            </div>
+          </div>
+        </fieldset>
+      </form> -->
+    
+
+
+

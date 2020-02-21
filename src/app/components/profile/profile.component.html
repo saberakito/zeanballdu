@@ -1,0 +1,301 @@
+<!-- <div  class="container">
+        <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" >
+            <div ngxSlickItem *ngFor="let slide of imageUrls" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%">
+            </div>
+        </ngx-slick-carousel>
+</div> -->
+
+<div class="content_">
+    <div class="container content_area_set">
+        <div class="banner_area">
+            <div class="detail_l">
+                <img src="/upload/file/{{image_name_1}}.{{image_type_1}}?v=1.1" alt="">
+                <img src="/upload/file/{{image_name_2}}.{{image_type_2}}?v=1.1" alt="">
+            </div>
+            <div class="detail_r">
+                <img src="/upload/file/{{image_name_3}}.{{image_type_3}}?v=1.1" alt="">
+            </div>
+        </div>
+        <div class="content_area" style="padding-top:50px;">
+            <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-3">
+                            <div class="profile-sidebar">
+                                <div class="profile-userpic img-circle" style="text-align:center;margin-top:-70px">
+                                    <div style="background:#F7941D; border-radius: 50%; width: 100px;height: 100px; margin:auto;font-size: 4em; color: white;">
+                                        {{this.member_nickname_sub}}
+                                    </div>
+                                    <!-- <a href="#">
+              <img src="/assets/images/icon/profile.jpg" class="shadow">
+              </a> -->
+                                </div>
+                                <div class="profile-usertitle">
+                                    <div class="profile-usertitle-name">
+
+                                        {{member_nickname}}
+                                    </div>
+                                    <div class="profile-usertitle-job">
+                                        <!-- <span class="text-muted">ปกปิด</span> -->
+                                    </div>
+                                </div>
+                                <div class="profile-userbuttons">
+                                    <div class="badge badge-success" style="padding:5px; font-weight:100;">
+                                        เป็นสมาชิกเมื่อ: {{member_create}}
+                                    </div>
+                                    <!-- <button type="button" class="btn btn-success btn-sm"></button> -->
+
+                                </div>
+                                <div class="profile-userbuttons">
+                                    <button type="button" class="btn btn-info btn-sm">เบอร์โทร: {{member_tel}}</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-9 nopadding">
+                            <div class="row justify-content-center" style="margin-bottom: 0px;">
+                            </div>
+                            <div class="row ">
+                                <div class="col-12 col-lg-6 stat_area">
+                                    <div class="card_inside shadow-sm">
+                                        <div class="card-body">
+                                            <blockquote class="blockquote">
+                                                <h6 class="text-center">สถิติประจำเดือน <span class="text-muted">(คะแนนรวม: {{sumScore}})</span></h6>
+                                                <div class="card-profile-stats d-flex justify-content-center">
+                                                    <div style="float:left;position: relative;top: -10px;text-align: center;width: 100%; text-align: center;;">
+                                                        <span class="text-success" style="font-size: 25px">{{countWin}}</span> / <span style="font-size: 25px">{{countDraw}}</span> / <span style="font-size: 25px" class="text-danger">{{countLose}}</span>
+                                                        <br>
+                                                        <span class="description">ชนะ/เสมอ/แพ้</span>
+                                                        <!-- <span class="heading"><strong class="text-success" style="font-size: 25px">{{countWin}}</strong> / {{countDraw}} / <span class="text-danger">{{countLose}}</span></span> -->
+                                                        <!-- <br><span class="description">ชนะ/เสมอ/แพ้</span> -->
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 100%;margin-top:-20px">
+                                                    <ng-container *ngIf="win_rate>=70">
+                                                        <progress-bar [progress]="win_rate" [color]="'#3AB54A'"></progress-bar>
+                                                    </ng-container>
+                                                    <ng-container *ngIf="win_rate>=50&&win_rate<=70">
+                                                        <progress-bar [progress]="win_rate" [color]="'#F7941D'"></progress-bar>
+                                                    </ng-container>
+                                                    <ng-container *ngIf="win_rate<50">
+                                                        <progress-bar [progress]="win_rate" [color]="'#B90202'"></progress-bar>
+                                                    </ng-container>
+
+                                                    <div class="description" style="margin-top:-10px">Win Rate</div>
+                                                </div>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 stat_area">
+                                    <div class="card_inside shadow-sm">
+                                        <div class="card-body">
+                                            <blockquote class="blockquote">
+                                                <h6 class="text-center">สถิติทั้งหมด <span class="text-muted">(คะแนนรวม: {{sumScore}})</span></h6>
+                                                <div class="card-profile-stats d-flex justify-content-center">
+                                                    <div style="float:left;position: relative;top: -10px;text-align: center;width: 100%; text-align: center;;">
+                                                        <span class="text-success" style="font-size: 25px">{{countWin}}</span> / <span style="font-size: 25px">{{countDraw}}</span> / <span style="font-size: 25px" class="text-danger">{{countLose}}</span>
+                                                        <br>
+                                                        <span class="description">ชนะ/เสมอ/แพ้</span>
+                                                        <!-- <span class="heading"><strong class="text-success" style="font-size: 25px">{{countWin}}</strong> / {{countDraw}} / <span class="text-danger">{{countLose}}</span></span> -->
+                                                        <!-- <br><span class="description">ชนะ/เสมอ/แพ้</span> -->
+                                                    </div>
+                                                    <!-- <div style="position: relative;top: -10px;">
+              <span class="heading"><strong class="text-success" style="font-size: 25px">{{countWin}}</strong> / {{countDraw}} / <span class="text-danger">{{countLose}}</span></span>
+              <br><span class="description">ชนะ/เสมอ/แพ้</span>
+              </div> -->
+                                                </div>
+                                                <div style="float: left; width: 100%;margin-top:-20px">
+                                                    <ng-container *ngIf="win_rate>=70">
+                                                        <progress-bar [progress]="win_rate" [color]="'#3AB54A'"></progress-bar>
+                                                    </ng-container>
+                                                    <ng-container *ngIf="win_rate>=50&&win_rate<=70">
+                                                        <progress-bar [progress]="win_rate" [color]="'#F7941D'"></progress-bar>
+                                                    </ng-container>
+                                                    <ng-container *ngIf="win_rate<50">
+                                                        <progress-bar [progress]="win_rate" [color]="'#B90202'"></progress-bar>
+                                                    </ng-container>
+
+                                                    <div class="description" style="margin-top:-10px">Win Rate</div>
+                                                </div>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="mt-5 text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top:20px">
+                        <!-- <div class="col-12 col-lg-3">
+                            <div class="card_inside shadow-sm">
+                                <div class="card-body">
+                                    <blockquote class="blockquote">
+                                        <h5>ถ้วยรางวัลสะสม</h5>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-12 col-lg-12 padding_set stat_area">
+                            <div class="card_inside shadow-sm">
+                                <div class="card-body">
+                                    <blockquote class="blockquote" style="text-align: left;">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <h5>ประวัติย้อนหลัง</h5>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group focused">
+                                                    <input type="hidden" name="_token" value="p3Egz1hzGSs03bXlW3xXRzZ9LfVfI8IMSkqF5zCC">
+
+                                                    <select id="changeMonth" [(ngModel)]="selected" (change)="changeSeason();" class="form-control text-white bg-success">
+                                                        <ng-container *ngFor="let season_list of season_lists; index as i; first as isFirst;let l = count">
+                                                            <option value="{{season_list.ss_id}}">{{season_list.ss_name}}</option>
+                                                        </ng-container>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </blockquote>
+                                    <div class="table-responsive-sm">
+                                        <table id="tablePreview" class="table table-bordered table-striped table-hover table-sm">
+                                            <thead>
+                                                <tr class="text-center">
+                                                    <th>ซีซัน</th>
+                                                    <th>วัน/เวลาที่เล่น</th>
+                                                    <th>MATCH DATE</th>
+                                                    <th>เลือก</th>
+                                                    <th>แฮนดิแคป</th>
+                                                    <th>ผล</th>
+                                                    <th>ชนะ/แพ้</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <ng-container *ngFor="let todoList of todoLists;index as  i;">
+                                                    <tr class="text-center">
+                                                        <th scope="row">{{todoList.ss_name}}</th>
+                                                        <th scope="row">{{todoList.date_time}}</th>
+                                                        <th>{{todoList.date_game_start}}</th>
+                                                        <td>
+                                                            <ng-container *ngIf="todoList.hg_team_win=='1'">
+                                                                <ng-container *ngIf="todoList.data_handicap==1">
+                                                                    <span style="color: #DC3545;">
+                                                            {{todoList.hd_home}}
+                                                        </span>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="todoList.data_handicap!=1">
+                                                                    {{todoList.hd_home}}
+                                                                </ng-container>
+
+                                                            </ng-container>
+                                                            <ng-container *ngIf="todoList.hg_team_win=='2'">
+                                                                <ng-container *ngIf="todoList.data_handicap==2">
+                                                                    <span style="color: #DC3545;">
+                                                            {{todoList.hd_away}}
+                                                        </span>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="todoList.data_handicap!=2">
+                                                                    {{todoList.hd_away}}
+                                                                </ng-container>
+
+                                                            </ng-container>
+                                                        </td>
+                                                        <td>
+                                                            <ng-container *ngIf="todoList.hd_home_star=='1'&&todoList.hg_team_win=='1'">
+                                                                -
+                                                            </ng-container>
+                                                            <ng-container *ngIf="todoList.hd_home_star=='1'&&todoList.hg_team_win=='2'">
+                                                                +
+                                                            </ng-container>
+                                                            <ng-container *ngIf="todoList.hd_away_star=='1'&&todoList.hg_team_win=='1'">
+                                                                +
+                                                            </ng-container>
+                                                            <ng-container *ngIf="todoList.hd_away_star=='1'&&todoList.hg_team_win=='2'">
+                                                                -
+                                                            </ng-container>
+                                                            {{todoList.hd_handicap}}
+                                                        </td>
+                                                        <td> {{todoList.hd_real_result}}</td>
+                                                        <td>
+                                                            <ng-container *ngIf="todoList.hg_result!=null">
+                                                                <ng-container *ngIf="todoList.hg_result=='1'">
+                                                                    <div _ngcontent-oid-c5="" class="circle_result lose"></div>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="todoList.hg_result=='2'">
+                                                                    <div _ngcontent-oid-c5="" class="circle_result lose_2"></div>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="todoList.hg_result=='3'">
+                                                                    <div _ngcontent-oid-c5="" class="circle_result draw"></div>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="todoList.hg_result=='4'">
+
+                                                                    <div _ngcontent-oid-c5="" class="circle_result win_2"></div>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="todoList.hg_result=='5'">
+                                                                    <div _ngcontent-oid-c5="" class="circle_result win"></div>
+                                                                </ng-container>
+                                                            </ng-container>
+
+                                                        </td>
+                                                    </tr>
+                                                </ng-container>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row border-top mt-5 py-5">
+              <div class="col-8">
+              <h5>ประวัติย้อนหลัง</h5>
+              </div>
+              <div class="col-4">
+              <div class="form-group focused">
+              <input type="hidden" name="_token" value="p3Egz1hzGSs03bXlW3xXRzZ9LfVfI8IMSkqF5zCC">
+              
+              <select id="changeMonth" onchange="changeMonth2();" class="form-control text-white bg-success">
+              <option value="2018-10">ตุลาคม 2561</option>
+              <option value="2018-11">พฤศจิกายน 2561</option>
+              <option value="2018-12">ธันวาคม 2561</option>
+              <option value="2019-01">มกราคม 2562</option>
+              <option value="2019-02">กุมภาพันธ์ 2562</option>
+              <option value="2019-03">มีนาคม 2562</option>
+              <option value="2019-04">เมษายน 2562</option>
+              <option value="2019-05">พฤษภาคม 2562</option>
+              <option value="2019-06">มิถุนายน 2562</option>
+              <option value="2019-07">กรกฎาคม 2562</option>
+              <option value="2019-08">สิงหาคม 2562</option>
+              <option value="2019-09">กันยายน 2562</option>
+              <option value="2019-10">ตุลาคม 2562</option>
+              <option value="2019-11">พฤศจิกายน 2562</option>
+              <option value="2019-12">ธันวาคม 2562</option>
+              <option value="2020-01">มกราคม 2563</option>
+              <option selected="" value="2020-02">กุมภาพันธ์ 2563</option>
+              </select>
+              </div>
+              </div>
+              </div> -->
+                    <!-- <ng-container *ngIf="m_id==member_current">
+                        <div style="float:left;overflow:hidden; padding-bottom:10px;">
+                            <button class="btn btn-primary" [routerLink]="['/playgame']">เล่นเกม</button>
+                        </div>
+                    </ng-container> -->
+                </div>
+            </div>
+        </div>

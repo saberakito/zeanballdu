@@ -1,0 +1,52 @@
+<div class="topnav" id="myTopnav">
+            <img src="/assets/images/header/light.png" alt="" style="float:left;width: 100%;">
+            <ng-container *ngFor="let menu of menus; index as i; first as isFirst;let l = count">
+                <ng-container *ngIf="login_status_check!=1">
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a [routerLinkActive]="['active-menu']"  [routerLinkActiveOptions]="{exact:true}" routerLink="/home" class=" links active ">หน้าแรก</a>
+                    </div>
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a  [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/playgame" class=" links active ">เล่นเกม</a>
+                    </div>
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a  [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/reward" class=" links active ">รางวัล</a>
+                    </div>
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a  [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/register" class=" links active ">สมัครสมาชิก</a>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="login_status_check!=0">
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a [routerLinkActive]="['active-menu']"  [routerLinkActiveOptions]="{exact:true}" routerLink="/home" class=" links active ">หน้าแรก</a>
+                    </div>
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a  [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/playgame" class=" links active ">เล่นเกม</a>
+                    </div>
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a  [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/reward" class=" links active ">รางวัล</a>
+                    </div>
+                    <div class="link_nav cal_4" *ngIf="i==0" >
+                        <a  [routerLinkActiveOptions]="{exact:true}" [routerLinkActive]="['active-menu']" routerLink="/profile/{{member_current}}" class=" links active ">ข้อมูลสมาชิก</a>
+                    </div>
+                </ng-container>
+                   
+            </ng-container>
+      <a [routerLinkActive]="['active-menu']" [routerLinkActiveOptions]="{exact:true}" href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+      </a>
+      <img src="/assets/images/header/light.png" alt="" style="float:left;width: 100%;">
+  </div>
+
+  <div class="topnav_mobile" id="myTopnav">
+      <ng-container *ngFor="let menu of menus; index as i; first as isFirst;let l = count">
+        <a [routerLinkActive]="['active-menu']" *ngIf="i==0" [routerLinkActiveOptions]="{exact:true}" routerLink="/home" class="btn_mobile btn  links active cal_{{l+2}}">หน้าแรก</a>
+        <a [routerLinkActive]="['active-menu']" *ngIf="i==0" [routerLinkActiveOptions]="{exact:true}" routerLink="/playgame" class="btn_mobile btn  links active cal_{{l+2}}">เล่นเกม</a>
+        <a [routerLinkActive]="['active-menu']" *ngIf="i==0" [routerLinkActiveOptions]="{exact:true}" routerLink="/reward" class="btn_mobile btn  links active cal_{{l+2}}">รางวัล</a>
+        <ng-container *ngIf="login_status_check!=1">
+            <a [routerLinkActive]="['active-menu']" *ngIf="i==0" [routerLinkActiveOptions]="{exact:true}" routerLink="/register" class="btn_mobile btn  links active cal_{{l+2}}">สมัครสมาชิก</a>
+        </ng-container>
+        <ng-container *ngIf="login_status_check!=0">
+            <a [routerLinkActive]="['active-menu']" *ngIf="i==0" [routerLinkActiveOptions]="{exact:true}" routerLink="/profile/{{member_current}}" class="btn_mobile btn  links active cal_{{l+2}}">ข้อมูลสมาชิก</a>
+        </ng-container>
+      </ng-container>
+  </div>

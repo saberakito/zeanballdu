@@ -1,0 +1,184 @@
+<!-- <div  class="container">
+        <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" >
+            <div ngxSlickItem *ngFor="let slide of imageUrls" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%">
+            </div>
+        </ngx-slick-carousel>
+</div> -->
+<ngx-spinner></ngx-spinner>
+<div class="content_">
+    <div class="container content_area_set">
+        <div class="banner_area">
+            <div class="detail_l">
+                <img src="/upload/file/{{image_name_1}}.{{image_type_1}}?v=1.1" alt="">
+                <img src="/upload/file/{{image_name_2}}.{{image_type_2}}?v=1.1" alt="">
+            </div>
+            <div class="detail_r">
+                <img src="/upload/file/{{image_name_3}}.{{image_type_3}}?v=1.1" alt="">
+            </div>
+        </div>
+
+
+
+        <div class="content_area">
+            <div class="row news-area" style="margin:unset;">
+                <!-- <div class="col-xl-3 col-md-6 col-sm-12 newsArea" *ngFor="let todo of todoList;" [routerLink]="['news-detail',todo.content_title+'-'+todo.content_id]"> -->
+                <!-- <div class="col-xl-3 col-md-6 col-sm-12 newsArea" *ngFor="let todo of todoList | paginate: { itemsPerPage: 8, currentPage: pageNews }"  [routerLink]="['news-detail',todo.content_id]"> -->
+                <div style="float:right;padding:5px;color: white; width: 100%; text-align: right;"><span routerLink="/news" class="hover">ดูเพิ่มเติม</span> </div>
+                <div class="col-xl-6 col-md-6 col-sm-12 newsArea  padding5" *ngFor="let todo of todoList_news | paginate: { itemsPerPage: 8, currentPage: pageNews }" [routerLink]="['/news/news-detail',todo.adjust_page_title+'-'+todo.adjust_page_id]">
+                    <div class="cardNews">
+                        <div class="image-news" [ngStyle]="{backgroundImage:'url(/upload/files/' + todo.adjust_page_image_name  + '.' + todo.adjust_page_image_type  + ')'}">
+                        </div>
+                        <div class="text-news">
+                            {{todo.adjust_page_title}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="detail_l">
+                <div class="table-responsive-sm">
+                    <table class="table table-bordered table-striped table-curved">
+                        <thead class="red_thead">
+                            <tr>
+                                <th scope="col" class="w100 text_center_table">ลำดับ</th>
+                                <th scope="col" class="w100 text_center_table">นามเซียน</th>
+                                <th scope="col" class="w100 text_center_table" style="width:400px;">10 นัดล่าสุด</th>
+                                <th scope="col" class="w100 text_center_table">วันนี้เลือก (ลีค)</th>
+                                <th scope="col" class="w100 text_center_table" style="width:50px;">คะแนน</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let todoList of todoLists|keyvalue;index as  i;">
+                                <tr class="hover_table_all text_center_table">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>
+                                        <div class="hover" style="color: #5E72E4;" routerLink="/profile/{{todoList.value.member_id}}">
+                                            {{todoList.value.member_nickname}}
+                                            <ng-container *ngIf="todoList.value.lose_3==true&&todoList.value.lose_5!=true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/lose3.gif">
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.lose_5==true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/lose5.gif">
+                                            </ng-container>
+
+
+                                            <ng-container *ngIf="todoList.value.win_3==true&&todoList.value.win_5!=true&&todoList.value.win_7!=true&&todoList.value.win_10!=true&&todoList.value.win_15!=true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/win3.gif">
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.win_3!=true&&todoList.value.win_5==true&&todoList.value.win_7!=true&&todoList.value.win_10!=true&&todoList.value.win_15!=true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/win5.gif">
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.win_3!=true&&todoList.value.win_5!=true&&todoList.value.win_7==true&&todoList.value.win_10!=true&&todoList.value.win_15!=true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/win7.gif">
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.win_3!=true&&todoList.value.win_5!=true&&todoList.value.win_7!=true&&todoList.value.win_10==true&&todoList.value.win_15!=true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/win10.gif">
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.win_3!=true&&todoList.value.win_5!=true&&todoList.value.win_7!=true&&todoList.value.win_10!=true&&todoList.value.win_15==true">
+                                                <img alt="{{todoList.value.member_lose_sum}}" class="icon_game_" src="/assets/images/icon_game/win15.gif">
+                                            </ng-container>
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                        <ng-container *ngFor="let listGame of todoList.value.array_game;">
+
+                                            <ng-container *ngIf="listGame.hg_result=='1'">
+                                                <ng-template #popContent>
+                                                    เลือก <span style="color: red;">{{listGame.detail_select_team}}</span>
+                                                    <br> HDP <span style="color: grey;"> {{listGame.detail_handicap}}</span>
+                                                    <br> ผล:
+                                                    <br> <span style="color: green;">{{listGame.detail_result_game}}</span>
+                                                </ng-template>
+                                                <div class="circle_result lose hover" placement="top" popoverTitle="{{listGame.detail_date}}" [ngbPopover]="popContent"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="listGame.hg_result=='2'">
+                                                <ng-template #popContent>
+                                                    เลือก <span style="color: red;">{{listGame.detail_select_team}}</span>
+                                                    <br> HDP <span style="color: grey;"> {{listGame.detail_handicap}}</span>
+                                                    <br> ผล:
+                                                    <br> <span style="color: green;">{{listGame.detail_result_game}}</span>
+                                                </ng-template>
+                                                <div class="circle_result lose_2 hover" placement="top" popoverTitle="{{listGame.detail_date}}" [ngbPopover]="popContent"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="listGame.hg_result=='3'">
+                                                <ng-template #popContent>
+                                                    เลือก <span style="color: red;">{{listGame.detail_select_team}}</span>
+                                                    <br> HDP <span style="color: grey;"> {{listGame.detail_handicap}}</span>
+                                                    <br> ผล:
+                                                    <br> <span style="color: green;">{{listGame.detail_result_game}}</span>
+                                                </ng-template>
+                                                <div class="circle_result draw hover" placement="top" popoverTitle="{{listGame.detail_date}}" [ngbPopover]="popContent"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="listGame.hg_result=='4'">
+                                                <ng-template #popContent>
+                                                    เลือก <span style="color: red;">{{listGame.detail_select_team}}</span>
+                                                    <br> HDP <span style="color: grey;"> {{listGame.detail_handicap}}</span>
+                                                    <br> ผล:
+                                                    <br> <span style="color: green;">{{listGame.detail_result_game}}</span>
+                                                </ng-template>
+                                                <div class="circle_result win_2 hover" placement="top" popoverTitle="{{listGame.detail_date}}" [ngbPopover]="popContent"></div>
+                                            </ng-container>
+                                            <ng-container *ngIf="listGame.hg_result=='5'">
+                                                <ng-template #popContent>
+                                                    เลือก <span style="color: red;">{{listGame.detail_select_team}}</span>
+                                                    <br> HDP <span style="color: grey;"> {{listGame.detail_handicap}}</span>
+                                                    <br> ผล:
+                                                    <br> <span style="color: green;">{{listGame.detail_result_game}}</span>
+                                                </ng-template>
+                                                <div popoverClass="my-custom-class" class="circle_result hover win btn-outline-secondary" tooltipClass="my-custom-class" placement="top" popoverTitle="{{listGame.detail_date}}" [ngbPopover]="popContent"></div>
+                                            </ng-container>
+                                        </ng-container>
+                                    </td>
+                                    <td>
+                                        <ng-container *ngIf="todoList.value.game_today.hg_team_win=='1'">
+                                            {{todoList.value.game_today.hd_home}}
+                                            <ng-container *ngIf="todoList.value.game_today.data_handicap=='1'">
+                                                -{{todoList.value.game_today.hd_handicap}}
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.game_today.data_handicap=='2'">
+                                                +{{todoList.value.game_today.hd_handicap}}
+                                            </ng-container>
+                                        </ng-container>
+                                        <ng-container *ngIf="todoList.value.game_today.hg_team_win=='2'">
+                                            {{todoList.value.game_today.hd_away}}
+                                            <ng-container *ngIf="todoList.value.game_today.data_handicap=='1'">
+                                                +{{todoList.value.game_today.hd_handicap}}
+                                            </ng-container>
+                                            <ng-container *ngIf="todoList.value.game_today.data_handicap=='2'">
+                                                -{{todoList.value.game_today.hd_handicap}}
+                                            </ng-container>
+                                        </ng-container>
+
+                                    </td>
+                                    <td>{{todoList.value.sumAllScore}}</td>
+                                </tr>
+                            </ng-container>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="detail_r">
+
+            </div>
+
+            <ng-container *ngFor="let promotion of todoPromotionText; index as i; first as isFirst;let l = count">
+                <div routerLink="/promotion/promotion-detail/{{promotion.adjust_page_id}}" class="col-md-12 hvr-push" style="margin-bottom:15px;padding:10px;">
+                    <!-- <div class="titlePromotion">{{promotion.adjust_page_title}}</div> -->
+                    <div class="detailLeft">
+                        <img class="attachment-alpha-store-carousel size-alpha-store-carousel wp-post-image" draggable="false" style="width: 100%;" src="/upload/files/{{promotion.adjust_page_image_name}}.{{promotion.adjust_page_image_type}}">
+                    </div>
+                    <!-- <div class="titlePromotion" style="margin-top:15px;">
+                        {{promotion.adjust_page_short_description}}
+                    </div> -->
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<!-- <div _ngcontent-gyx-c3="" attr="http://line.me/ti/p/~@megarich888" class="qr-popup"><i _ngcontent-gyx-c3="" aria-hidden="true" class="fa fa-window-close fa-6 close-qr"></i></div> -->
